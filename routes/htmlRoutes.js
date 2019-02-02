@@ -6,7 +6,7 @@ module.exports = function (app) {
     db.Usuarios.findAll({}).then(function (dbUsuarios) {
       res.render("index", {
         msg: "Welcome!",
-        
+
       });
     });
   });
@@ -16,8 +16,11 @@ module.exports = function (app) {
     db.Usuarios.findAll({}).then(function (
       dbUsuarios
     ) {
+      console.log(dbUsuarios);
+
       res.render("admin-usuarios", {
-        usuarios: dbUsuarios
+        datos: dbUsuarios
+
       });
     });
   });
