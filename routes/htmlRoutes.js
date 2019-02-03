@@ -20,7 +20,6 @@ module.exports = function (app) {
 
       res.render("admin-usuarios", {
         datos: dbUsuarios
-
       });
     });
   });

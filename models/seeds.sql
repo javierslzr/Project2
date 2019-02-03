@@ -13,4 +13,3 @@ INSERT INTO `fitconnection`.`servicios` (`servicio`, `costo`,`createdAt`,`update
 INSERT INTO `fitconnection`.`ubicacions` ( `nombre`, `direccion`,`createdAt`,`updatedAt`) VALUES ( 'monterrey', 'tapia 1500',NOW(),NOW());
 INSERT INTO `fitconnection`.`ubicacions` ( `nombre`, `direccion`,`createdAt`,`updatedAt`) VALUES ( 'san pedro', 'vasconcelos 800',NOW(),NOW());
 INSERT INTO `fitconnection`.`ubicacions` ( `nombre`, `direccion`,`createdAt`,`updatedAt`) VALUES ( 'contry', 'av juarez 340',NOW(),NOW());
-
