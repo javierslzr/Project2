@@ -1,8 +1,4 @@
 
-// Code here handles what happens when a user submits a new character on the form.
-// Effectively it takes the form inputs then sends it to the server to save in the DB.
-
-// when user clicks add-btn
 $("#addButton").on("click", function(event) {
   event.preventDefault();
 
