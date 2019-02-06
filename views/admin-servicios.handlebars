@@ -20,10 +20,10 @@
 
                 <tr class="col fila-{{id}}">
                     <td>{{id}}</td>
-                    <td contenteditable="true">{{servicio}}</td>
-                    <td contenteditable="true">{{costo}}</td>
+                    <td contenteditable="true" class="servicio">{{servicio}}</td>
+                    <td contenteditable="true" class="costo">{{costo}}</td>
                     <td>
-                      <button type="submit" class="btn btn-success" id='edit'>Editar</button>  
+                      <button type="submit" class="editar btn btn-success" data-fila={{id}}>Editar</button>  
                     </td>
                     <td>
                     <button class="delete btn btn-danger">x</button>

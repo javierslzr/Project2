@@ -28,7 +28,7 @@ $("#submit").on("click", function(event) {
     $("#costo").val(""); 
 });
 
-$("#edit").on("click", function(event) {
+$(".edit").on("click", function(event) {
   event.preventDefault();
 
   // make a newCharacter obj
