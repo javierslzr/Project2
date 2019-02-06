@@ -24,4 +24,21 @@ module.exports = function(app) {
       res.json(dbExample);
     });
   });
+
+  //GET ALL AVIALABLE SERVICES
+  app.get("/api/usuario/servicios", function(req, res) {
+    db.Servicios.findAll({}).then(function(dbServicios) {
+      res.json(dbServicios);
+    });
+  });
+
+  //GET ALL AVIALABLE locations
+  app.get("/api/usuario/ubicaciones", function(req, res) {
+    db.Ubicacion.findAll({}).then(function(Ubicacion) {
+      res.json(Ubicacion);
+    });
+  });
+
+
+
 };

@@ -3,7 +3,7 @@ module.exports = function(sequelize, DataTypes) {
       
       name: DataTypes.STRING,
       correo: DataTypes.STRING,
-      telefono: DataTypes.STRING
+      telefono: DataTypes.INTEGER
     });
     return Usuarios;
   };

@@ -1,0 +1,35 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-9 offset-1">
+            <h1>Administrador Catálogo de Servicios</h1>
+            <a href="/">← Back To Home</a>
+
+
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Servicio</th>
+                        <th scope="col">Costo</th>
+                    </tr>
+                </thead>
+
+                {{#each Servicios}}
+
+                <tr class="col">
+                    <td>{{id}}</td>
+                    <td>{{servicio}}</td>
+                    <td>{{costo}}</td>
+                    <td><button type="submit" class="btn btn-success">Agregar</button></td>
+                </tr>
+
+                {{/each}}
+            </table>
+
+            
+
+        </div>
+    </div>
+
+</div>
