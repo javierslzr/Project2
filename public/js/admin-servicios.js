@@ -1,3 +1,5 @@
+$(document).ready(function() {
+
 // Code here handles what happens when a user submits a new character on the form.
 // Effectively it takes the form inputs then sends it to the server to save in the DB.
 
@@ -52,4 +54,26 @@ $(".editar").on("click", function(event) {
   
 
   
+});
+
+$(".delete").on("click", function(event) {
+  event.preventDefault();
+
+  let id = $(this).data("fila");
+  debugger;
+    var deletedServicio = {
+      id: id,
+    };
+
+  // send an AJAX to DELETE
+    $.ajax({
+      method: "DELETE",
+      url: "/api/admin/servicios",
+      data: deletedServicio
+    }).then(function(data){
+      alert("Deleted data")
+    });
+
+});
+
 });
