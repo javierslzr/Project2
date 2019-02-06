@@ -28,23 +28,23 @@ $("#submit").on("click", function(event) {
     $("#costo").val(""); 
 });
 
-$(".edit").on("click", function(event) {
+$(".editar").on("click", function(event) {
   event.preventDefault();
 
-  // make a newCharacter obj
-  var updateService = {
-    // name from name input
-    servicio: $("#servicio").text().trim(),
-    // points from force-points input
-    costo: $("#costo").text().trim()
-  };
+  let id = $(this).data("fila");
+
+    var editedUser = {
+      id: id,
+      servicio: $(`.fila-${id} .servicio`).text().trim(),
+      costo: $(`.fila-${id} .costo`).text().trim(),
+    };
 
   // send an AJAX to update
   
     $.ajax({
       method: "PUT",
       url: "/api/admin/servicios",
-      data: updateService
+      data: editedUser
     }).then(function(data){
       alert("Updated data")
     });
