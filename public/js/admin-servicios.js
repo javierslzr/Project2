@@ -34,9 +34,9 @@ $("#edit").on("click", function(event) {
   // make a newCharacter obj
   var updateService = {
     // name from name input
-    servicio: $("#servicio").val().trim(),
+    servicio: $("#servicio").text().trim(),
     // points from force-points input
-    costo: $("#costo").val().trim()
+    costo: $("#costo").text().trim()
   };
 
   // send an AJAX to update
