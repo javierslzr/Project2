@@ -27,3 +27,29 @@ $("#submit").on("click", function(event) {
     $("#servicio").val("");
     $("#costo").val(""); 
 });
+
+$("#edit").on("click", function(event) {
+  event.preventDefault();
+
+  // make a newCharacter obj
+  var updateService = {
+    // name from name input
+    servicio: $("#servicio").val().trim(),
+    // points from force-points input
+    costo: $("#costo").val().trim()
+  };
+
+  // send an AJAX to update
+  
+    $.ajax({
+      method: "PUT",
+      url: "/api/admin/servicios",
+      data: updateService
+    }).then(function(data){
+      alert("Updated data")
+    });
+  
+  
+
+  
+});

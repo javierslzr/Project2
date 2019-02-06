@@ -16,4 +16,17 @@ module.exports = function(app) {
   app.get("*", function(req, res) {
     res.render("404");
   });
+
+  app.put("/admin/servicios/:id", function(req, res) {
+    db.Servicios.update(
+      req.body,
+      {
+        where: {
+          id: req.body.id
+        }
+      }).then(function(dbServicio) {
+      res.json(dbServicio);
+    });
+  });
+
 };

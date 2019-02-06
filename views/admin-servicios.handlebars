@@ -12,6 +12,7 @@
                         <th scope="col">ID</th>
                         <th scope="col">Servicio</th>
                         <th scope="col">Costo</th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
 
@@ -19,13 +20,20 @@
 
                 <tr class="col">
                     <td>{{id}}</td>
-                    <td>{{servicio}}</td>
-                    <td>{{costo}}</td>
+                    <td contenteditable="true">{{servicio}}</td>
+                    <td contenteditable="true">{{costo}}</td>
+                    <td>
+                      <button type="submit" class="btn btn-success" id='edit'>Editar</button>  
+                    </td>
+                    <td>
+                    <button class="delete btn btn-danger">x</button>
+                    </td>
                 </tr>
 
                 {{/each}}
             </table>
 
+            <h2>SERVICIO - AGREGAR SERVICIO</h2>
             <div class="container">
                 <form>
                     <div class="row">
@@ -43,6 +51,11 @@
                 
             </div>
 
+            <div class="container">
+                <form>
+                    <span class="todo-container">{{Servicio}}</span>
+                </form>   
+            </div>
         </div>
     </div>
 
