@@ -45,4 +45,12 @@ module.exports = function (app) {
     });
   });
 
+
+  //Allan
+  app.get("/api/admin/usuarios", function (req, res) {
+    db.Usuarios.findAll({}).then(function (dbUsuarios) {
+        res.json(dbUsuarios);
+    });
+});
+
 };
