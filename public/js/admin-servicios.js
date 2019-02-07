@@ -23,6 +23,7 @@ $("#submit").on("click", function(event) {
         console.log(data);
         // tell the user we're adding a character with an alert window
         alert("Agregando Servicio...");
+        location.reload();
       });
   
     // empty each input box by replacing the value with an empty string
@@ -49,11 +50,9 @@ $(".editar").on("click", function(event) {
       data: editedUser
     }).then(function(data){
       alert("Updated data")
+      location.reload();
     });
-  
-  
 
-  
 });
 
 $(".delete").on("click", function(event) {
@@ -72,6 +71,7 @@ $(".delete").on("click", function(event) {
       data: deletedServicio
     }).then(function(data){
       alert("Deleted data")
+      location.reload();
     });
 
 });
