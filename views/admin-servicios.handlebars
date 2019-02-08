@@ -17,19 +17,37 @@
 
                 {{#each Servicios}}
 
-                <tr class="col">
+                <tr class="col fila-{{id}}">
                     <td>{{id}}</td>
-                    <td>{{servicio}}</td>
-                    <td>{{costo}}</td>
-                    <td><button type="submit" class="btn btn-success">Agregar</button></td>
+                    <td class="servicio">{{servicio}}</td>
+                    <td class="costo">{{costo}}</td>
+                    <td><button type="submit" class="agregar btn btn-success">Agregar</button></td>
                 </tr>
 
                 {{/each}}
             </table>
 
-            
+            {{!-- <div class="container">
+                <form>
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" class="form-control" id='servicio' placeholder="Servicio">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" id='costo' placeholder="Costo">
+                        </div>
+                        <div class="col">
+                            <button type="submit" class="btn btn-success">Agregar</button>
+                        </div>
+                    </div>
+                </form>
+                
+            </div> --}}
 
         </div>
     </div>
 
 </div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/admin-servicios.js"></script>
