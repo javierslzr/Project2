@@ -37,7 +37,8 @@ module.exports = function (app) {
   // Delete an example by id
   app.delete("/api/admin/servicios", function (req, res) {
     db.Servicios.destroy({
-      where: { id: req.body.id 
+      where: {
+        id: req.body.id
       }
     }).then(function (dbServicios) {
       console.log("deleted");
@@ -46,11 +47,19 @@ module.exports = function (app) {
   });
 
 
-  //Allan
+  //usuarios
   app.get("/api/admin/usuarios", function (req, res) {
     db.Usuarios.findAll({}).then(function (dbUsuarios) {
-        res.json(dbUsuarios);
+      res.json(dbUsuarios);
     });
-});
+  });
+
+  //ubicaciones
+  app.get("/api/admin/ubicacion", function (req, res) {
+    db.Ubicacion.findAll({}).then(function (dbUbicaciones) {
+      res.json(dbUbicaciones);
+    });
+  });
 
 };
+

@@ -31,6 +31,7 @@ $("#submit").on("click", function(event) {
     $("#costo").val(""); 
 });
 
+//Para editar un servicio del catalogo 
 $(".editar").on("click", function(event) {
   event.preventDefault();
 
@@ -55,6 +56,7 @@ $(".editar").on("click", function(event) {
 
 });
 
+//Para eliminar un servicio del catalogo
 $(".delete").on("click", function(event) {
   event.preventDefault();
 
