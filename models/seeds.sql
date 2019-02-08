@@ -13,3 +13,9 @@ INSERT INTO `fitconnection`.`servicios` (`servicio`, `costo`,`createdAt`,`update
 INSERT INTO `fitconnection`.`ubicacions` ( `nombre`, `direccion`,`createdAt`,`updatedAt`) VALUES ( 'monterrey', 'tapia 1500',NOW(),NOW());
 INSERT INTO `fitconnection`.`ubicacions` ( `nombre`, `direccion`,`createdAt`,`updatedAt`) VALUES ( 'san pedro', 'vasconcelos 800',NOW(),NOW());
 INSERT INTO `fitconnection`.`ubicacions` ( `nombre`, `direccion`,`createdAt`,`updatedAt`) VALUES ( 'contry', 'av juarez 340',NOW(),NOW());
+
+INSERT INTO `fitconnection`.`maintables` (`fechaInicio`,`fechaFinal`,`createdAt`,`updatedAt`,`UsuarioId`,`ServicioId`,`UbicacionId`) VALUES (NOW(),NOW(),NOW(),NOW(), '1', '2','3');
+INSERT INTO `fitconnection`.`maintables` (`fechaInicio`,`fechaFinal`,`createdAt`,`updatedAt`,`UsuarioId`,`ServicioId`,`UbicacionId`) VALUES (NOW(),NOW(),NOW(),NOW(), '2', '2','2');
+INSERT INTO `fitconnection`.`maintables` (`fechaInicio`,`fechaFinal`,`createdAt`,`updatedAt`,`UsuarioId`,`ServicioId`,`UbicacionId`) VALUES (NOW(),NOW(),NOW(),NOW(), '3', '4','1');
+INSERT INTO `fitconnection`.`maintables` (`fechaInicio`,`fechaFinal`,`createdAt`,`updatedAt`,`UsuarioId`,`ServicioId`,`UbicacionId`) VALUES (NOW(),NOW(),NOW(),NOW(), '4', '3','1');
+INSERT INTO `fitconnection`.`maintables` (`fechaInicio`,`fechaFinal`,`createdAt`,`updatedAt`,`UsuarioId`,`ServicioId`,`UbicacionId`) VALUES (NOW(),NOW(),NOW(),NOW(), '5', '1','2');S (NOW(),NOW(),NOW(),NOW(), '5', '1','2');
