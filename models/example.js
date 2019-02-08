@@ -6,17 +6,17 @@ module.exports = function (sequelize, DataTypes) {
    
     fechaInicio: {
       type: DataTypes.DATE,
-      get: function () {
-        return moment(this.getDataValue('date')).format('MMMM do, YYYY');
-    },
+    //   get: function () {
+    //     return moment(this.getDataValue('date')).format('MMMM do, YYYY');
+    // },
       allowNull: false
 
     },
     fechaFinal: {
       type: DataTypes.DATE,
-      get: function () {
-        return moment(this.getDataValue('date')).format('MMMM do, YYYY');
-    },
+    //   get: function () {
+    //     return moment(this.getDataValue('date')).format('MMMM do, YYYY');
+    // },
       allowNull: false
 
     },

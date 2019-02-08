@@ -19,9 +19,9 @@ module.exports = function (app) {
         db.Servicios, db.Ubicacion, db.Usuarios
       ]
     }).then(function (dbmainTable) {
+      console.log(dbmainTable);
       res.render("admin-AddDelServUser", {
-        mainTable: dbmainTable,
-
+        mainTable: dbmainTable
       });
     });
 
