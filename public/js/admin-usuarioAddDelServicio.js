@@ -3,17 +3,17 @@ $(document).ready(function () {
     $(".agregar").on("click", function (event) {
         event.preventDefault();
 
-        
+
 
         function validateForm() {
             var isValid = true;
-            
+
             $(".form-control").each(function () {
                 if ($(this).val() === "") {
                     isValid = false;
                 }
             });
-            
+
 
             $(".custom-select").each(function () {
 
@@ -21,7 +21,7 @@ $(document).ready(function () {
                     isValid = false;
                 }
             });
-            
+
             return isValid;
         }
 
@@ -36,13 +36,13 @@ $(document).ready(function () {
                 UbicacionId: $("#ubicacion").val()
             };
 
-            
+
             // AJAX post the data to the friends API.
             $.post("/api/admin/AddDelServUser", userData)
                 // on success, run this callback
                 .then(function (data) {
                     // log the data we found
-                    
+
                     // tell the user we're adding a character with an alert window
                     alert("Agregando Servicio...");
                     location.reload();
@@ -60,26 +60,26 @@ $(document).ready(function () {
     });
 
     //Para eliminar un servicio del catalogo
-$(".delete").on("click", function(event) {
-    event.preventDefault();
-  
-    let id = $(this).data("fila");
-    debugger;
-      var deletedServicio = {
-        id: id,
-      };
-  
-    // send an AJAX to DELETE
-      $.ajax({
-        method: "DELETE",
-        url: "/api/admin/usuarioDelServicio",
-        data: deletedServicio
-      }).then(function(data){
-        alert("Deleted data")
-        location.reload();
-      });
-  
-  });
+    $(".delete").on("click", function (event) {
+        event.preventDefault();
+
+        let id = $(this).data("fila");
+        debugger;
+        var deletedServicio = {
+            id: id,
+        };
+
+        // send an AJAX to DELETE
+        $.ajax({
+            method: "DELETE",
+            url: "/api/admin/usuarioDelServicio",
+            data: deletedServicio
+        }).then(function (data) {
+            alert("Deleted data")
+            location.reload();
+        });
+
+    });
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     //Usuario
@@ -109,8 +109,6 @@ $(".delete").on("click", function(event) {
         userSelect.append(rowsToAdd);
         // userSelect.val(authorId);
 
-        var users = data;
-        
 
     }
 
@@ -152,8 +150,6 @@ $(".delete").on("click", function(event) {
         ubicacionSelect.append(rowsToAdd);
         // userSelect.val(authorId);
 
-        var users = data;
-        
 
     }
 
@@ -194,8 +190,6 @@ $(".delete").on("click", function(event) {
         servicioSelect.append(rowsToAdd);
         // userSelect.val(authorId);
 
-        var users = data;
-        
 
     }
 
