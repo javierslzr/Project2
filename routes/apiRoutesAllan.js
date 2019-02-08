@@ -7,8 +7,7 @@ module.exports = function (app) {
         });
     });
 
-    
-
+    // Get all examples
     app.post("/api/admin/usuarios", function (req, res) {
         db.Usuarios.create(req.body).then(function (dbUsuarios) {
             res.json(dbUsuarios);
