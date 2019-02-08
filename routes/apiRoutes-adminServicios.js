@@ -46,6 +46,18 @@ module.exports = function (app) {
     });
   });
 
+    // Delete an example by id
+    app.delete("/api/admin/usuarioDelServicio", function (req, res) {
+      db.mainTable.destroy({
+        where: {
+          id: req.body.id
+        }
+      }).then(function (dbmainTable) {
+        console.log("deleted");
+        res.json(dbmainTable);
+      });
+    });
+
 
   //usuarios
   app.get("/api/admin/usuarios", function (req, res) {
@@ -58,6 +70,13 @@ module.exports = function (app) {
   app.get("/api/admin/ubicacion", function (req, res) {
     db.Ubicacion.findAll({}).then(function (dbUbicaciones) {
       res.json(dbUbicaciones);
+    });
+  });
+
+  //mainTable
+  app.post("/api/admin/AddDelServUser", function (req, res) {
+    db.mainTable.create(req.body).then(function (dbmainTable) {
+      res.json(dbmainTable);
     });
   });
 

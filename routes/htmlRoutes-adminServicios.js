@@ -1,10 +1,10 @@
 var db = require("../models");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Load admin-servicios page with all the service's list
-  app.get("/admin/servicios", function(req, res) {
-    db.Servicios.findAll({}).then(function(
-    dbServicios
+  app.get("/admin/servicios", function (req, res) {
+    db.Servicios.findAll({}).then(function (
+      dbServicios
     ) {
       res.render("admin-servicios", {
         servicios: dbServicios
@@ -13,25 +13,28 @@ module.exports = function(app) {
   });
 
   //Load the admin-usuarioAddDelServicio page
-  app.get("/admin/AddDelServUser", function(req, res) {
-    db.Servicios.findAll({}).then(function(
-    dbServicios
-    ) {
+  app.get("/admin/AddDelServUser", function (req, res) {
+    db.mainTable.findAll({
+      include: [
+        db.Servicios, db.Ubicacion, db.Usuarios
+      ]
+    }).then(function (dbmainTable) {
       res.render("admin-AddDelServUser", {
-        servicios: dbServicios
+        mainTable: dbmainTable,
+
       });
     });
 
-  
+
   });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
+  app.get("*", function (req, res) {
     res.render("404");
   });
 
 
-  // app.put("/admin/servicios/:id", function(req, res) {
+  // app.put("/admin/AddDelServUser", function(req, res) {
   //   db.Servicios.update(
   //     req.body,
   //     {
