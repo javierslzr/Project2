@@ -8,6 +8,7 @@ module.exports = function(app) {
     });
   });
 
+  
   // Create a new example
   app.post("/api/examples", function(req, res) {
     db.Example.create(req.body).then(function(dbExample) {
@@ -23,4 +24,28 @@ module.exports = function(app) {
       res.json(dbExample);
     });
   });
+
+  //GET ALL AVIALABLE SERVICES
+  app.get("/api/usuario/servicios", function(req, res) {
+    db.Servicios.findAll({}).then(function(dbServicios) {
+      res.json(dbServicios);
+    });
+  });
+
+  //GET ALL AVIALABLE locations
+  app.get("/api/usuario/ubicaciones", function(req, res) {
+    db.Ubicacion.findAll({}).then(function(Ubicacion) {
+      res.json(Ubicacion);
+    });
+  });
+
+  //GET CURRENT PEOPLE IN MAINTABLE
+  app.get("/api/maintable", function(req, res) {
+    db.mainTable.findAll({}).then(function(mainTable) {
+      res.json(mainTable);
+    });
+  });
+
+
+
 };
