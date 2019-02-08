@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "M3l1z0nd01.$",
+    "password": "noseno",
     "database": "fitconnection",
     "host": "localhost",
     "dialect": "mysql"
