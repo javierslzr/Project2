@@ -1,4 +1,5 @@
 var db = require("../models");
+var moment = require("moment");
 
 module.exports = function (app) {
   // Load index page
@@ -21,7 +22,7 @@ module.exports = function (app) {
       });
     });
   });
-
+  
   app.get("/usuario/servicios", function (req, res) {
     db.Servicios.findAll({}).then(function (
       dbServicios
@@ -39,7 +40,25 @@ module.exports = function (app) {
       dbUbicacion
     ) {
       res.render("admin-ubicaciones", {
-        Ubicacion: dbUbicacion
+        Ubicacion: dbUbicacion 
+      });
+    });
+  });
+
+  app.get("/admin/home", function (req, res) {
+    db.mainTable.findAll({
+      where: {
+        fechaFinal: {
+          $gte: moment().subtract(7, 'days').toDate()
+        }
+      }
+    }).then(function (
+      dbmainTable
+    ) {
+      console.log(dbmainTable);
+
+      res.render("admin-home", {
+        mainTable: dbmainTable
       });
     });
   });
