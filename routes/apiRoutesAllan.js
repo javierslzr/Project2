@@ -30,4 +30,14 @@ module.exports = function (app) {
             });
     });
 
+    app.delete("/api/admin/usuarios", function (req, res) {
+        db.Usuarios.destroy({
+            where: {
+                id: req.body.id
+            }
+        }).then(function (dbUsuarios) {
+            res.json(dbUsuarios)
+        });
+    });
+
 };

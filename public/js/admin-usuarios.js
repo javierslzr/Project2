@@ -40,19 +40,39 @@ $(document).ready(function () {
       correo: $(`.fila-${id} .correo`).text().trim(),
       telefono: $(`.fila-${id} .telefono`).text().trim(),
     };
-    
-      $.ajax({
-        method: "PUT",
-        url: "/api/admin/usuarios",
-        data: editedUser
-      }).then(function(data){
-        console.log(data)
-        alert("updated data");
-      });
-  
 
-
+    $.ajax({
+      method: "PUT",
+      url: "/api/admin/usuarios",
+      data: editedUser
+    }).then(function (data) {
+      console.log(data)
+      alert("updated data");
+    });
   });
 });
+
+$(".delete").on("click", function (event) {
+  event.preventDefault();
+
+  let id = $(this).data("fila");
+
+  var deletedUser = {
+    id: id,
+    
+  };
+
+  $.ajax({
+    method: "DELETE",
+    url: "/api/admin/usuarios",
+    data: deletedUser
+  }).then(function (data) {
+    console.log(data)
+    alert("Deleted data");
+  });
+});
+
+
+
 
 
