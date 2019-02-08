@@ -1,29 +1,29 @@
 $(document).ready(function () {
 
-    var userSelect = $("#user");
+    var servicioSelect = $("#servicio");
 
     // Getting the authors, and their posts
-    getUsuarios();
+    getServicios();
 
     // A function to get Users and then render our list of Authors
-    function getUsuarios() {
-        $.get("/api/admin/usuarios", renderUserList);
+    function getServicios() {
+        $.get("/api/usuario/servicios", renderServiciosList);
     }
     // Function to either render a list of authors, or if there are none, direct the user to the page
     // to create an author first
-    function renderUserList(data) {
+    function renderServiciosList(data) {
         // if (!data.length) {
         //     window.location.href = "/user/usuarios";
         // }
         $(".hidden").removeClass("hidden");
         var rowsToAdd = [];
         for (var i = 0; i < data.length; i++) {
-            rowsToAdd.push(createUserRow(data[i]));
+            rowsToAdd.push(createServicioRow(data[i]));
         }
-        userSelect.empty();
+        servicioSelect.empty();
         
         // console.log(userSelect);
-        userSelect.append(rowsToAdd);
+        servicioSelect.append(rowsToAdd);
         // userSelect.val(authorId);
 
         var users = data;
@@ -32,10 +32,10 @@ $(document).ready(function () {
     }
 
     // Creates the user options in the dropdown
-    function createUserRow(user) {
+    function createServicioRow(servicio) {
         var listOption = $("<option>");
-        listOption.attr("value", user.id);
-        listOption.text(user.name);
+        listOption.attr("value", servicio.id);
+        listOption.text(servicio.servicio);
         return listOption;
     }
 
@@ -94,7 +94,7 @@ $(document).ready(function () {
 
     // A function to get Users and then render our list of Authors
     function getUbicaciones() {
-        $.get("/api/admin/ubicacion", renderUbicacionList);
+        $.get("/api/usuario/ubicaciones", renderUbicacionList);
     }
     // Function to either render a list of authors, or if there are none, direct the user to the page
     // to create an author first
